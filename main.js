@@ -25,10 +25,10 @@ function results() {
 
     let lastUserGuess = guesses[guesses.length - 1]; // Gets the last user guess from the array
     // Check if the the last users guess is Too Low, Too High or Correct
-    let lowResult = lastUserGuess < randomNumber; 
+    let lowResult = lastUserGuess < randomNumber;
     let highResult = lastUserGuess > randomNumber;
     let rightResult = lastUserGuess == randomNumber;
-    
+
     // User only has 10 Turn to figure out.
     if (turn == 11) {
         lowOrHiField.innerHTML = 'GAME OVER';
@@ -37,7 +37,7 @@ function results() {
     else if (lowResult) {
         lowOrHiField.innerHTML = 'Last Guess: Too Low';
         wrong(lowOrHiField);
-        }
+    }
     else if (highResult) {
         lowOrHiField.innerHTML = 'Last Guess: Too High';
         wrong(lowOrHiField);
@@ -66,7 +66,7 @@ function randomNumberFn() {
 function newGame() {
     submit.disabled = true;
     field.disabled = true;
-    const button = document.createElement('button')     
+    const button = document.createElement('button')
     document.body.appendChild(button);
     button.textContent = 'Start New Game';
     const newGame = document.querySelector('button');

@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body { 
+    background: lightgray;;
+    margin: 10px;
+    line-height: 2.0;
+    
+}
+
+main {
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.guessSubmit {
+    font-weight: bold;
+    text-transform: uppercase;
+}
