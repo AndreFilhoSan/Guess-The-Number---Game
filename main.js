@@ -1,3 +1,6 @@
+const randomNumberFn = () => {
+    return Math.floor(Math.random() * (100));
+}
 // Mutable Variables
 let turn = 1;
 let guesses = [];
@@ -9,9 +12,8 @@ const lowOrHiField = document.querySelector('p.lowOrHi');
 const randomNumber = randomNumberFn()
 const submit = document.body.getElementsByClassName('guessSubmit')[0]
 
-submit.addEventListener('click', nextTurn)
 
-function nextTurn() {
+const nextTurn = () => {
     ++turn
     guesses.push(field.value);
     guesses = guesses.map(Number)
@@ -21,7 +23,9 @@ function nextTurn() {
     results();
 }
 
-function results() {
+submit.addEventListener('click', nextTurn)
+
+const results = () => {
 
     let lastUserGuess = guesses[guesses.length - 1]; // Gets the last user guess from the array
     // Check if the the last users guess is Too Low, Too High or Correct
@@ -43,27 +47,24 @@ function results() {
         wrong(lowOrHiField);
     }
     else if (rightResult) {
-        lowOrHiField.innerHTML = 'You Win! Congratulations';
+        lowOrHiField.innerHTML = 'You Won! Congratulations';
         right(lowOrHiField);
         newGame();
     }
 }
 
-function wrong(lastGuess) {
+const wrong = (lastGuess) => {
     lastGuess.style.backgroundColor = "red";
     lastGuess.style.color = "white";
 }
 
-function right(lastGuess) {
+const right = (lastGuess) => {
     lastGuess.style.backgroundColor = "green";
     lastGuess.style.color = "white";
 }
 
-function randomNumberFn() {
-    return Math.floor(Math.random() * (100));
-}
 
-function newGame() {
+const newGame = () => {
     submit.disabled = true;
     field.disabled = true;
     const button = document.createElement('button')
@@ -73,6 +74,6 @@ function newGame() {
     newGame.addEventListener('click', refresh)
 }
 
-function refresh() {
+const refresh = () => {
     document.location.reload(true);
 }
