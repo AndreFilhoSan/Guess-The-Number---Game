@@ -74,6 +74,7 @@ const newGame = () => {
     newGame.addEventListener('click', refresh)
 }
 
+// Reset page to initial state.
 const refresh = () => {
     document.location.reload(true);
 }
